@@ -1,0 +1,441 @@
+{
+  "drivers": {
+    "S76561198163626080": {
+      "carNumber": 4,
+      "carModel": 1,
+      "name": "Brandon Chan",
+      "finishingPositions": [
+        1,
+        1
+      ],
+      "racePoints": [
+        25,
+        50
+      ],
+      "totalPoints": 75
+    },
+    "S76561198070902224": {
+      "carNumber": 18,
+      "carModel": 15,
+      "name": "Scott Newell",
+      "finishingPositions": [
+        2,
+        2
+      ],
+      "racePoints": [
+        22.5,
+        45
+      ],
+      "totalPoints": 67.5
+    },
+    "S76561198311304160": {
+      "carNumber": 12,
+      "carModel": 15,
+      "name": "Warren Schmitt",
+      "finishingPositions": [
+        3,
+        3
+      ],
+      "racePoints": [
+        20,
+        40
+      ],
+      "totalPoints": 60
+    },
+    "S76561198882534663": {
+      "carNumber": 144,
+      "carModel": 19,
+      "name": "Chris Omani",
+      "finishingPositions": [
+        4,
+        4
+      ],
+      "racePoints": [
+        18,
+        36
+      ],
+      "totalPoints": 54
+    },
+    "S76561198987904099": {
+      "carNumber": 10,
+      "carModel": 6,
+      "name": "Chris Pace",
+      "finishingPositions": [
+        5,
+        5
+      ],
+      "racePoints": [
+        16.5,
+        33
+      ],
+      "totalPoints": 49.5
+    },
+    "S76561198185149174": {
+      "carNumber": 917,
+      "carModel": 16,
+      "name": "Ryan Baumann",
+      "finishingPositions": [
+        6,
+        6
+      ],
+      "racePoints": [
+        15,
+        30
+      ],
+      "totalPoints": 45
+    },
+    "S76561198058897238": {
+      "carNumber": 91,
+      "carModel": 1,
+      "name": "Jonathan Wong",
+      "finishingPositions": [
+        7,
+        7
+      ],
+      "racePoints": [
+        13.5,
+        27
+      ],
+      "totalPoints": 40.5
+    },
+    "S76561197960811689": {
+      "carNumber": 913,
+      "carModel": 7,
+      "name": "Abe Duarte",
+      "finishingPositions": [
+        8,
+        8
+      ],
+      "racePoints": [
+        12,
+        24
+      ],
+      "totalPoints": 36
+    },
+    "S76561199002438989": {
+      "carNumber": 116,
+      "carModel": 19,
+      "name": "Vadim Molla",
+      "finishingPositions": [
+        9,
+        9
+      ],
+      "racePoints": [
+        10.5,
+        21
+      ],
+      "totalPoints": 31.5
+    },
+    "S76561198197767853": {
+      "carNumber": 185,
+      "carModel": 14,
+      "name": "Chad Lamb",
+      "finishingPositions": [
+        10,
+        10
+      ],
+      "racePoints": [
+        9.5,
+        19
+      ],
+      "totalPoints": 28.5
+    },
+    "S76561198018551396": {
+      "carNumber": 555,
+      "carModel": 16,
+      "name": "Thiago Duarte",
+      "finishingPositions": [
+        11,
+        11
+      ],
+      "racePoints": [
+        8.5,
+        17
+      ],
+      "totalPoints": 25.5
+    },
+    "S76561198145898238": {
+      "carNumber": 728,
+      "carModel": 20,
+      "name": "Norman Chan",
+      "finishingPositions": [
+        12,
+        12
+      ],
+      "racePoints": [
+        7.5,
+        15
+      ],
+      "totalPoints": 22.5
+    },
+    "S76561198016171940": {
+      "carNumber": 23,
+      "carModel": 15,
+      "name": "David Merriman",
+      "finishingPositions": [
+        13,
+        13
+      ],
+      "racePoints": [
+        6.5,
+        13
+      ],
+      "totalPoints": 19.5
+    },
+    "S76561198087955566": {
+      "carNumber": 42,
+      "carModel": 6,
+      "name": "Gabriel Lira",
+      "finishingPositions": [
+        14,
+        14
+      ],
+      "racePoints": [
+        5.5,
+        11
+      ],
+      "totalPoints": 16.5
+    },
+    "S76561199095544897": {
+      "carNumber": 117,
+      "carModel": 23,
+      "name": "Alejandro Gallego",
+      "finishingPositions": [
+        15,
+        15
+      ],
+      "racePoints": [
+        5,
+        10
+      ],
+      "totalPoints": 15
+    },
+    "S76561198029136317": {
+      "carNumber": 19,
+      "carModel": 16,
+      "name": "KhaledBHS KhaledBHS",
+      "finishingPositions": [
+        16,
+        16
+      ],
+      "racePoints": [
+        4.5,
+        9
+      ],
+      "totalPoints": 13.5
+    },
+    "S76561198882130380": {
+      "carNumber": 68,
+      "carModel": 61,
+      "name": "Neil Sutherland",
+      "finishingPositions": [
+        17,
+        17
+      ],
+      "racePoints": [
+        4,
+        8
+      ],
+      "totalPoints": 12
+    },
+    "S76561198103644504": {
+      "carNumber": 13,
+      "carModel": 51,
+      "name": "Ryan Flanagan",
+      "finishingPositions": [
+        18,
+        18
+      ],
+      "racePoints": [
+        3.5,
+        7
+      ],
+      "totalPoints": 10.5
+    },
+    "S76561198002000551": {
+      "carNumber": 207,
+      "carModel": 51,
+      "name": "Thomas DiLibero",
+      "finishingPositions": [
+        19,
+        19
+      ],
+      "racePoints": [
+        3,
+        6
+      ],
+      "totalPoints": 9
+    },
+    "S76561198180035053": {
+      "carNumber": 96,
+      "carModel": 52,
+      "name": "Robert Bowers",
+      "finishingPositions": [
+        20,
+        20
+      ],
+      "racePoints": [
+        2.5,
+        5
+      ],
+      "totalPoints": 7.5
+    },
+    "S76561199053013906": {
+      "carNumber": 67,
+      "carModel": 61,
+      "name": "Mark Sutherland",
+      "finishingPositions": [
+        21,
+        21
+      ],
+      "racePoints": [
+        2,
+        4
+      ],
+      "totalPoints": 6
+    },
+    "S76561197995010520": {
+      "carNumber": 78,
+      "carModel": 53,
+      "name": "David Anderson",
+      "finishingPositions": [
+        22,
+        22
+      ],
+      "racePoints": [
+        1.5,
+        3
+      ],
+      "totalPoints": 4.5
+    },
+    "S76561199032709858": {
+      "carNumber": 66,
+      "carModel": 61,
+      "name": "Adam Stark",
+      "finishingPositions": [
+        23,
+        23
+      ],
+      "racePoints": [
+        1,
+        2
+      ],
+      "totalPoints": 3
+    },
+    "S76561199051046903": {
+      "carNumber": 420,
+      "carModel": 2,
+      "name": "Daniel Archibald",
+      "finishingPositions": [
+        24,
+        24
+      ],
+      "racePoints": [
+        0.5,
+        1
+      ],
+      "totalPoints": 1.5
+    },
+    "S76561199008116148": {
+      "carNumber": 9,
+      "carModel": 51,
+      "name": "Aaron Matthews",
+      "finishingPositions": [
+        25,
+        25
+      ],
+      "racePoints": [
+        0,
+        1
+      ],
+      "totalPoints": 1
+    },
+    "S76561199099266003": {
+      "carNumber": 88,
+      "carModel": 19,
+      "name": "Vinnie Lima",
+      "finishingPositions": [
+        26,
+        26
+      ],
+      "racePoints": [
+        0,
+        1
+      ],
+      "totalPoints": 1
+    },
+    "S76561198796707756": {
+      "carNumber": 27,
+      "carModel": 53,
+      "name": "William Pyefinch",
+      "finishingPositions": [
+        27,
+        27
+      ],
+      "racePoints": [
+        0,
+        1
+      ],
+      "totalPoints": 1
+    },
+    "S76561198080779210": {
+      "carNumber": 1,
+      "carModel": 20,
+      "name": "Edmond Chan",
+      "finishingPositions": [
+        28,
+        28
+      ],
+      "racePoints": [
+        0,
+        1
+      ],
+      "totalPoints": 1
+    },
+    "S76561198000142643": {
+      "carNumber": 621,
+      "carModel": 20,
+      "name": "Sarah Robin",
+      "finishingPositions": [
+        29,
+        29
+      ],
+      "racePoints": [
+        0,
+        1
+      ],
+      "totalPoints": 1
+    }
+  },
+  "results": [
+    "S76561198163626080",
+    "S76561198070902224",
+    "S76561198311304160",
+    "S76561198882534663",
+    "S76561198987904099",
+    "S76561198185149174",
+    "S76561198058897238",
+    "S76561197960811689",
+    "S76561199002438989",
+    "S76561198197767853",
+    "S76561198018551396",
+    "S76561198145898238",
+    "S76561198016171940",
+    "S76561198087955566",
+    "S76561199095544897",
+    "S76561198029136317",
+    "S76561198882130380",
+    "S76561198103644504",
+    "S76561198002000551",
+    "S76561198180035053",
+    "S76561199053013906",
+    "S76561197995010520",
+    "S76561199032709858",
+    "S76561199051046903",
+    "S76561199008116148",
+    "S76561199099266003",
+    "S76561198796707756",
+    "S76561198080779210",
+    "S76561198000142643"
+  ]
+}
