@@ -1,5 +1,9 @@
 const faker = require("faker");
 
+function createPlayerId() {
+  return `S${faker.random.number()}`;
+}
+
 function createSeasonConfig(overrides = {}) {
   return {
     points: {
@@ -45,7 +49,7 @@ function createDriver(overrides = {}) {
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     shortName: faker.random.alpha(),
-    playerId: `S${faker.random.number()}`,
+    playerId: createPlayerId(),
   };
   return {
     car: {
@@ -92,5 +96,6 @@ module.exports = {
   createSeasonConfig,
   createRaceResults,
   createDriver,
-  createConsolidatedRaceResultsDriver
+  createConsolidatedRaceResultsDriver,
+  createPlayerId
 };

@@ -1,6 +1,6 @@
 const stringify = require('csv-stringify/lib/sync');
 
-function createSplitCsv(seasonConfig, results){
+function createSplitCsv(seasonConfig, results, polePositionPlayerIds){
   const raceNames = seasonConfig.races.map((race) => race.name);
 
   const firstPlace = results.drivers[results.results[0]];
@@ -23,7 +23,8 @@ function createSplitCsv(seasonConfig, results){
       return memo;
     }, { wins: 0, podiums: 0 });
 
-    const bestFinish = Math.min(...nonEmptyFinishingPositions)
+    const bestFinish = Math.min(...nonEmptyFinishingPositions);
+    const poles = polePositionPlayerIds.filter((id) => id === playerId).length;
 
     // each value in this array must match the order of the columns below in `stringify` columns
     return [
@@ -33,7 +34,7 @@ function createSplitCsv(seasonConfig, results){
       driverResult.totalPoints - firstPlace.totalPoints,
       ...racePositions,
       stats.wins,
-      'TODO',
+      poles,
       stats.podiums,
       bestFinish,
       nonEmptyFinishingPositions.reduce((memo, pos) => memo + pos, 0) / nonEmptyFinishingPositions.length
@@ -52,4 +53,6 @@ function createSplitCsv(seasonConfig, results){
   );
 }
 
-module.exports = {createSplitCsv}
+module.exports = {
+  createSplitCsv
+}

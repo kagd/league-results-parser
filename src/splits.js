@@ -1,4 +1,22 @@
 const {consolidateRaces} = require('./consolidateRaces');
+const { camelCase } = require('lodash');
+
+function loadSplitRaces(seasonConfig, split){
+  return seasonConfig.races.reduce((memo, race) => {
+    const filepath = `../data/${split}/${camelCase(race.name)}-r.json`;
+    try {
+      memo.push(require(filepath));
+    } catch (error) {
+      console.log(`path ${filepath} not found`);
+      memo.push({
+        sessionResult: {
+          leaderBoardLines: [],
+        },
+      });
+    }
+    return memo;
+  }, []);
+}
 
 function compileSplit(seasonConfig, races){
   const drivers = consolidateRaces(seasonConfig, races);
@@ -21,4 +39,7 @@ function compileSplit(seasonConfig, races){
   return {drivers, results};
 }
 
-module.exports = {compileSplit};
+module.exports = {
+  compileSplit,
+  loadSplitRaces,
+};
