@@ -5,10 +5,19 @@ const path = require('path');
 const {createSplitCsv} = require('./src/createSplitCsv');
 
 function loadSplitRaces(split){
-  return seasonConfig.races.map((race) => require(`./data/${split}/${race.name}.json`));
+  return seasonConfig.races.reduce((memo, race) => {
+    try {
+      memo.push(require(`./data/${split}/${race.name}.json`));
+    } catch (error) {
+      memo.push({
+        sessionResult: {
+          leaderBoardLines: [],
+        },
+      });
+    }
+    return memo;
+  }, []);
 }
-
-const raceNames = seasonConfig.races.map((race) => race.name);
 
 ['split2'].forEach(function(split){
   const results = compileSplit(seasonConfig, loadSplitRaces(split));

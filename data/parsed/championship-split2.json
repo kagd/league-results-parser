@@ -6,13 +6,31 @@
       "name": "Brandon Chan",
       "finishingPositions": [
         1,
-        1
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         25,
-        50
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 75
+      "totalPoints": 25
     },
     "S76561198070902224": {
       "carNumber": 18,
@@ -20,13 +38,31 @@
       "name": "Scott Newell",
       "finishingPositions": [
         2,
-        2
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         22.5,
-        45
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 67.5
+      "totalPoints": 22.5
     },
     "S76561198311304160": {
       "carNumber": 12,
@@ -34,13 +70,31 @@
       "name": "Warren Schmitt",
       "finishingPositions": [
         3,
-        3
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         20,
-        40
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 60
+      "totalPoints": 20
     },
     "S76561198882534663": {
       "carNumber": 144,
@@ -48,13 +102,31 @@
       "name": "Chris Omani",
       "finishingPositions": [
         4,
-        4
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         18,
-        36
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 54
+      "totalPoints": 18
     },
     "S76561198987904099": {
       "carNumber": 10,
@@ -62,13 +134,31 @@
       "name": "Chris Pace",
       "finishingPositions": [
         5,
-        5
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         16.5,
-        33
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 49.5
+      "totalPoints": 16.5
     },
     "S76561198185149174": {
       "carNumber": 917,
@@ -76,13 +166,31 @@
       "name": "Ryan Baumann",
       "finishingPositions": [
         6,
-        6
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         15,
-        30
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 45
+      "totalPoints": 15
     },
     "S76561198058897238": {
       "carNumber": 91,
@@ -90,13 +198,31 @@
       "name": "Jonathan Wong",
       "finishingPositions": [
         7,
-        7
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         13.5,
-        27
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 40.5
+      "totalPoints": 13.5
     },
     "S76561197960811689": {
       "carNumber": 913,
@@ -104,13 +230,31 @@
       "name": "Abe Duarte",
       "finishingPositions": [
         8,
-        8
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         12,
-        24
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 36
+      "totalPoints": 12
     },
     "S76561199002438989": {
       "carNumber": 116,
@@ -118,13 +262,31 @@
       "name": "Vadim Molla",
       "finishingPositions": [
         9,
-        9
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         10.5,
-        21
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 31.5
+      "totalPoints": 10.5
     },
     "S76561198197767853": {
       "carNumber": 185,
@@ -132,13 +294,31 @@
       "name": "Chad Lamb",
       "finishingPositions": [
         10,
-        10
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         9.5,
-        19
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 28.5
+      "totalPoints": 9.5
     },
     "S76561198018551396": {
       "carNumber": 555,
@@ -146,13 +326,31 @@
       "name": "Thiago Duarte",
       "finishingPositions": [
         11,
-        11
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         8.5,
-        17
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 25.5
+      "totalPoints": 8.5
     },
     "S76561198145898238": {
       "carNumber": 728,
@@ -160,13 +358,31 @@
       "name": "Norman Chan",
       "finishingPositions": [
         12,
-        12
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         7.5,
-        15
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 22.5
+      "totalPoints": 7.5
     },
     "S76561198016171940": {
       "carNumber": 23,
@@ -174,13 +390,31 @@
       "name": "David Merriman",
       "finishingPositions": [
         13,
-        13
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         6.5,
-        13
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 19.5
+      "totalPoints": 6.5
     },
     "S76561198087955566": {
       "carNumber": 42,
@@ -188,13 +422,31 @@
       "name": "Gabriel Lira",
       "finishingPositions": [
         14,
-        14
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         5.5,
-        11
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 16.5
+      "totalPoints": 5.5
     },
     "S76561199095544897": {
       "carNumber": 117,
@@ -202,13 +454,31 @@
       "name": "Alejandro Gallego",
       "finishingPositions": [
         15,
-        15
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         5,
-        10
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 15
+      "totalPoints": 5
     },
     "S76561198029136317": {
       "carNumber": 19,
@@ -216,13 +486,31 @@
       "name": "KhaledBHS KhaledBHS",
       "finishingPositions": [
         16,
-        16
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         4.5,
-        9
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 13.5
+      "totalPoints": 4.5
     },
     "S76561198882130380": {
       "carNumber": 68,
@@ -230,13 +518,31 @@
       "name": "Neil Sutherland",
       "finishingPositions": [
         17,
-        17
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         4,
-        8
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 12
+      "totalPoints": 4
     },
     "S76561198103644504": {
       "carNumber": 13,
@@ -244,13 +550,31 @@
       "name": "Ryan Flanagan",
       "finishingPositions": [
         18,
-        18
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         3.5,
-        7
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 10.5
+      "totalPoints": 3.5
     },
     "S76561198002000551": {
       "carNumber": 207,
@@ -258,13 +582,31 @@
       "name": "Thomas DiLibero",
       "finishingPositions": [
         19,
-        19
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         3,
-        6
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 9
+      "totalPoints": 3
     },
     "S76561198180035053": {
       "carNumber": 96,
@@ -272,13 +614,31 @@
       "name": "Robert Bowers",
       "finishingPositions": [
         20,
-        20
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         2.5,
-        5
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 7.5
+      "totalPoints": 2.5
     },
     "S76561199053013906": {
       "carNumber": 67,
@@ -286,13 +646,31 @@
       "name": "Mark Sutherland",
       "finishingPositions": [
         21,
-        21
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         2,
-        4
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 6
+      "totalPoints": 2
     },
     "S76561197995010520": {
       "carNumber": 78,
@@ -300,13 +678,31 @@
       "name": "David Anderson",
       "finishingPositions": [
         22,
-        22
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         1.5,
-        3
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 4.5
+      "totalPoints": 1.5
     },
     "S76561199032709858": {
       "carNumber": 66,
@@ -314,13 +710,31 @@
       "name": "Adam Stark",
       "finishingPositions": [
         23,
-        23
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         1,
-        2
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 3
+      "totalPoints": 1
     },
     "S76561199051046903": {
       "carNumber": 420,
@@ -328,13 +742,31 @@
       "name": "Daniel Archibald",
       "finishingPositions": [
         24,
-        24
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         0.5,
-        1
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 1.5
+      "totalPoints": 0.5
     },
     "S76561199008116148": {
       "carNumber": 9,
@@ -342,13 +774,31 @@
       "name": "Aaron Matthews",
       "finishingPositions": [
         25,
-        25
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         0,
-        1
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 1
+      "totalPoints": 0
     },
     "S76561199099266003": {
       "carNumber": 88,
@@ -356,13 +806,31 @@
       "name": "Vinnie Lima",
       "finishingPositions": [
         26,
-        26
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         0,
-        1
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 1
+      "totalPoints": 0
     },
     "S76561198796707756": {
       "carNumber": 27,
@@ -370,13 +838,31 @@
       "name": "William Pyefinch",
       "finishingPositions": [
         27,
-        27
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         0,
-        1
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 1
+      "totalPoints": 0
     },
     "S76561198080779210": {
       "carNumber": 1,
@@ -384,13 +870,31 @@
       "name": "Edmond Chan",
       "finishingPositions": [
         28,
-        28
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         0,
-        1
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 1
+      "totalPoints": 0
     },
     "S76561198000142643": {
       "carNumber": 621,
@@ -398,13 +902,31 @@
       "name": "Sarah Robin",
       "finishingPositions": [
         29,
-        29
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
       ],
       "racePoints": [
         0,
-        1
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "totalPoints": 1
+      "totalPoints": 0
     }
   },
   "results": [

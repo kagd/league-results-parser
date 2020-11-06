@@ -224,7 +224,7 @@ describe('#createSplitCsv', () => {
       const playerId1 = `S${faker.random.number()}`;
       const seasonConfig = createSeasonConfig();
       const driver1 = createConsolidatedRaceResultsDriver({
-        finishingPositions: [,8],
+        finishingPositions: [-1,8],
       });
       const results = {
         drivers: {
@@ -260,11 +260,11 @@ describe('#createSplitCsv', () => {
       expect(json[0]['avg']).toEqual('5');
     });
 
-    it('counts missing race weeks as a zero value', () => {
+    it('ignores missing race weeks', () => {
       const playerId1 = `S${faker.random.number()}`;
       const seasonConfig = createSeasonConfig();
       const driver1 = createConsolidatedRaceResultsDriver({
-        finishingPositions: [, 8],
+        finishingPositions: [-1, 8],
       });
       const results = {
         drivers: {
@@ -276,7 +276,7 @@ describe('#createSplitCsv', () => {
       };
       const value = createSplitCsv(seasonConfig, results);
       const json = csvParse(value, {columns: true});
-      expect(json[0]['avg']).toEqual('4');
+      expect(json[0]['avg']).toEqual('8');
     });
   });
 });

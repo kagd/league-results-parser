@@ -57,12 +57,48 @@
   },
   "races": [
     {
-      "name": "zolder",
+      "name": "Zolder",
       "format": "sprint"
     },
     {
-      "name": "spa",
+      "name": "Misano",
+      "format": "sprint"
+    },
+    {
+      "name": "Leguna Seca",
       "format": "endurance"
+    },
+    {
+      "name": "Nurburgring",
+      "format": "sprint"
+    },
+    {
+      "name": "Monza",
+      "format": "sprint"
+    },
+    {
+      "name": "Barcelona",
+      "format": "endurance"
+    },
+    {
+      "name": "Nurburgring",
+      "format": "sprint"
+    },
+    {
+      "name": "Hungaroring",
+      "format": "sprint"
+    },
+    {
+      "name": "Zandvoort",
+      "format": "sprint"
+    },
+    {
+      "name": "Silverstone",
+      "format": "endurance"
+    },
+    {
+      "name": "Suzuka",
+      "format": "sprint"
     }
   ]
 }

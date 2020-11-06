@@ -22,7 +22,7 @@ function createSplitCsv(seasonConfig, results){
     }, { wins: 0, podiums: 0 });
 
     // remove empty values before finding min value
-    const nonEmptyFinishingPositions = driverResult.finishingPositions.filter((pos) => pos != undefined);
+    const nonEmptyFinishingPositions = driverResult.finishingPositions.filter((pos) => pos > -1);
     const bestFinish = Math.min(...nonEmptyFinishingPositions)
 
     return [
@@ -35,7 +35,7 @@ function createSplitCsv(seasonConfig, results){
       'TODO',
       stats.podiums,
       bestFinish,
-      nonEmptyFinishingPositions.reduce((memo, pos) => memo + pos, 0) / driverResult.finishingPositions.length
+      nonEmptyFinishingPositions.reduce((memo, pos) => memo + pos, 0) / nonEmptyFinishingPositions.length
     ]
   });
 
