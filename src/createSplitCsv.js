@@ -20,8 +20,10 @@ function createSplitCsv(seasonConfig, results){
       }
       return memo;
     }, { wins: 0, podiums: 0 });
+
     // remove empty values before finding min value
-    const bestFinish = Math.min(...driverResult.finishingPositions.filter((pos) => pos != undefined))
+    const nonEmptyFinishingPositions = driverResult.finishingPositions.filter((pos) => pos != undefined);
+    const bestFinish = Math.min(...nonEmptyFinishingPositions)
 
     return [
       driverResult.carNumber,
@@ -32,14 +34,15 @@ function createSplitCsv(seasonConfig, results){
       stats.wins,
       'TODO',
       stats.podiums,
-      Math.min(...driverResult.finishingPositions.filter((pos) => pos != undefined))
+      bestFinish,
+      nonEmptyFinishingPositions.reduce((memo, pos) => memo + pos, 0) / driverResult.finishingPositions.length
     ]
   });
 
   return stringify(
     data, 
     {
-      columns: ['#', 'Driver', 'Pts', 'Diff', ...raceNames, 'Wins', 'Poles', 'Podiums', 'Best Finish'],
+      columns: ['#', 'Driver', 'Pts', 'Diff', ...raceNames, 'Wins', 'Poles', 'Podiums', 'Best Finish', 'avg'],
       header: true,
     },
     function(err, data){
