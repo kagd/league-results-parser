@@ -45,7 +45,7 @@ describe('#createSplitCsv', () => {
   });
 
   describe('podiums', () => {
-    it('adds all podiums for a driver, minus wins', () => {
+    it('adds all podiums for a driver', () => {
       const playerId = `S${faker.random.number()}`;
       const seasonConfig = createSeasonConfig({
         // 4 races needed to tabulate all
@@ -84,7 +84,7 @@ describe('#createSplitCsv', () => {
       }
       const value = createSplitCsv(seasonConfig, results);
       const json = csvParse(value, {columns: true});
-      expect(json[0].Podiums).toEqual('2');
+      expect(json[0].Podiums).toEqual('3');
     });
 
     it('[bugfix] ignores finishingPositions where that are blank', () => {
@@ -126,7 +126,7 @@ describe('#createSplitCsv', () => {
       }
       const value = createSplitCsv(seasonConfig, results);
       const json = csvParse(value, {columns: true});
-      expect(json[0].Podiums).toEqual('1');
+      expect(json[0].Podiums).toEqual('2');
     });
   });
 

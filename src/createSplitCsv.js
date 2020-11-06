@@ -17,7 +17,7 @@ function createSplitCsv(seasonConfig, results){
       if(pos === 1){
         memo.wins = memo.wins + 1;
       }
-      else if(pos <= 3){
+      if(pos <= 3){
         memo.podiums = memo.podiums + 1;
       }
       return memo;
