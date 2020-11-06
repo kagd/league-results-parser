@@ -1,6 +1,6 @@
 const faker = require("faker");
 
-function createSeasonConfig() {
+function createSeasonConfig(overrides = {}) {
   return {
     points: {
       endurance: [50, 25, 10],
@@ -18,6 +18,7 @@ function createSeasonConfig() {
         format: "endurance",
       },
     ],
+    ...overrides
   };
 }
 function createRaceResults(drivers) {
@@ -75,8 +76,21 @@ function createDriver(overrides = {}) {
   };
 }
 
+function createConsolidatedRaceResultsDriver(overrides = {}){
+  return {
+    carNumber: faker.random.number(999),
+    carModel: 1,
+    name: faker.name.findName(),
+    finishingPositions: [1, 2, 10],
+    racePoints: [36, 30, 9],
+    totalPoints: 75,
+    ...overrides
+  }
+}
+
 module.exports = {
   createSeasonConfig,
   createRaceResults,
   createDriver,
+  createConsolidatedRaceResultsDriver
 };
