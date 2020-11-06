@@ -44,46 +44,90 @@ describe('#createSplitCsv', () => {
     expect(json[0].Wins).toEqual('1');
   });
 
-  it('adds all podiums for a driver, minus wins', () => {
-    const playerId = `S${faker.random.number()}`;
-    const seasonConfig = createSeasonConfig({
-      // 4 races needed to tabulate all
-      // 4 positions
-      races: [
-        {
-          name: "zolder",
-          format: "sprint",
+  describe('podiums', () => {
+    it('adds all podiums for a driver, minus wins', () => {
+      const playerId = `S${faker.random.number()}`;
+      const seasonConfig = createSeasonConfig({
+        // 4 races needed to tabulate all
+        // 4 positions
+        races: [
+          {
+            name: "zolder",
+            format: "sprint",
+          },
+          {
+            name: "spa",
+            format: "endurance",
+          },
+          {
+            name: "zandvoort",
+            format: "sprint",
+          },
+          {
+            name: "misano",
+            format: "sprint",
+          },
+        ],
+      });
+      
+      const results = {
+        drivers: {
+          [playerId]: createConsolidatedRaceResultsDriver({
+            finishingPositions: [1, 2, 3, 10],
+            racePoints: [36, 30, 20, 9],
+            totalPoints: 95,
+          }),
         },
-        {
-          name: "spa",
-          format: "endurance",
-        },
-        {
-          name: "zandvoort",
-          format: "sprint",
-        },
-        {
-          name: "misano",
-          format: "sprint",
-        },
-      ],
+        results: [
+          playerId
+        ]
+      }
+      const value = createSplitCsv(seasonConfig, results);
+      const json = csvParse(value, {columns: true});
+      expect(json[0].Podiums).toEqual('2');
     });
-    
-    const results = {
-      drivers: {
-        [playerId]: createConsolidatedRaceResultsDriver({
-          finishingPositions: [1, 2, 3, 10],
-          racePoints: [36, 30, 20, 9],
-          totalPoints: 95,
-        }),
-      },
-      results: [
-        playerId
-      ]
-    }
-    const value = createSplitCsv(seasonConfig, results);
-    const json = csvParse(value, {columns: true});
-    expect(json[0].Podiums).toEqual('2');
+
+    it('[bugfix] ignores finishingPositions where that are blank', () => {
+      const playerId = `S${faker.random.number()}`;
+      const seasonConfig = createSeasonConfig({
+        // 4 races needed to tabulate all
+        // 4 positions
+        races: [
+          {
+            name: "zolder",
+            format: "sprint",
+          },
+          {
+            name: "spa",
+            format: "endurance",
+          },
+          {
+            name: "zandvoort",
+            format: "sprint",
+          },
+          {
+            name: "misano",
+            format: "sprint",
+          },
+        ],
+      });
+      
+      const results = {
+        drivers: {
+          [playerId]: createConsolidatedRaceResultsDriver({
+            finishingPositions: [1, , 3, 10],
+            racePoints: [36, 30, 20, 9],
+            totalPoints: 95,
+          }),
+        },
+        results: [
+          playerId
+        ]
+      }
+      const value = createSplitCsv(seasonConfig, results);
+      const json = csvParse(value, {columns: true});
+      expect(json[0].Podiums).toEqual('1');
+    });
   });
 
   it('lists total points for the driver', () => {

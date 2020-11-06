@@ -11,7 +11,9 @@ function createSplitCsv(seasonConfig, results){
       return memo;
     }, []);
     
-    const stats = racePositions.reduce(function(memo, pos){
+    const nonEmptyFinishingPositions = driverResult.finishingPositions.filter((pos) => pos > -1);
+
+    const stats = nonEmptyFinishingPositions.reduce(function(memo, pos){
       if(pos === 1){
         memo.wins = memo.wins + 1;
       }
@@ -21,10 +23,9 @@ function createSplitCsv(seasonConfig, results){
       return memo;
     }, { wins: 0, podiums: 0 });
 
-    // remove empty values before finding min value
-    const nonEmptyFinishingPositions = driverResult.finishingPositions.filter((pos) => pos > -1);
     const bestFinish = Math.min(...nonEmptyFinishingPositions)
 
+    // each value in this array must match the order of the columns below in `stringify` columns
     return [
       driverResult.carNumber,
       driverResult.name,
