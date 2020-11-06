@@ -1,4 +1,4 @@
-const {compileSplit} = require('./splts');
+const {compileSplit} = require('./splits');
 const {
   createSeasonConfig,
   createRaceResults,

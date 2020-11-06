@@ -25,6 +25,7 @@ function createSplitCsv(seasonConfig, results, polePositionPlayerIds){
 
     const bestFinish = Math.min(...nonEmptyFinishingPositions);
     const poles = polePositionPlayerIds.filter((id) => id === playerId).length;
+    const average = Math.round(nonEmptyFinishingPositions.reduce((memo, pos) => memo + pos, 0) / nonEmptyFinishingPositions.length);
 
     // each value in this array must match the order of the columns below in `stringify` columns
     return [
@@ -37,7 +38,7 @@ function createSplitCsv(seasonConfig, results, polePositionPlayerIds){
       poles,
       stats.podiums,
       bestFinish,
-      nonEmptyFinishingPositions.reduce((memo, pos) => memo + pos, 0) / nonEmptyFinishingPositions.length
+      average
     ]
   });
 

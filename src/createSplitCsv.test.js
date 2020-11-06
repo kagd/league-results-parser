@@ -39,7 +39,7 @@ describe('#createSplitCsv', () => {
         playerId
       ]
     }
-    const value = createSplitCsv(seasonConfig, results);
+    const value = createSplitCsv(seasonConfig, results, [playerId]);
     const json = csvParse(value, {columns: true});
     expect(json[0].Wins).toEqual('1');
   });
@@ -82,7 +82,7 @@ describe('#createSplitCsv', () => {
           playerId
         ]
       }
-      const value = createSplitCsv(seasonConfig, results);
+      const value = createSplitCsv(seasonConfig, results, [playerId]);
       const json = csvParse(value, {columns: true});
       expect(json[0].Podiums).toEqual('3');
     });
@@ -124,7 +124,7 @@ describe('#createSplitCsv', () => {
           playerId
         ]
       }
-      const value = createSplitCsv(seasonConfig, results);
+      const value = createSplitCsv(seasonConfig, results, [playerId]);
       const json = csvParse(value, {columns: true});
       expect(json[0].Podiums).toEqual('2');
     });
@@ -143,7 +143,7 @@ describe('#createSplitCsv', () => {
         playerId
       ]
     };
-    const value = createSplitCsv(seasonConfig, results);
+    const value = createSplitCsv(seasonConfig, results, [playerId]);
     const json = csvParse(value, {columns: true});
     expect(json[0].Pts).toEqual('66');
   });
@@ -174,7 +174,7 @@ describe('#createSplitCsv', () => {
         playerId3
       ]
     };
-    const value = createSplitCsv(seasonConfig, results);
+    const value = createSplitCsv(seasonConfig, results, [playerId1, playerId2, playerId3]);
     const json = csvParse(value, {columns: true});
     expect(json[0].Driver).toEqual(driver1.name);
     expect(json[1].Driver).toEqual(driver2.name);
@@ -207,7 +207,7 @@ describe('#createSplitCsv', () => {
         playerId3
       ]
     };
-    const value = createSplitCsv(seasonConfig, results);
+    const value = createSplitCsv(seasonConfig, results, [playerId1, playerId2, playerId3]);
     const json = csvParse(value, {columns: true});
     expect(json[0].Diff).toEqual('0');
     expect(json[1].Diff).toEqual('-6');
@@ -236,7 +236,7 @@ describe('#createSplitCsv', () => {
         playerId2,
       ]
     };
-    const value = createSplitCsv(seasonConfig, results);
+    const value = createSplitCsv(seasonConfig, results, [playerId1, playerId2]);
     const json = csvParse(value, {columns: true});
     expect(json[0][seasonConfig.races[0].name]).toEqual('1');
     expect(json[0][seasonConfig.races[1].name]).toEqual('3');
@@ -259,7 +259,7 @@ describe('#createSplitCsv', () => {
           playerId1,
         ]
       };
-      const value = createSplitCsv(seasonConfig, results);
+      const value = createSplitCsv(seasonConfig, results, [playerId1]);
       const json = csvParse(value, {columns: true});
       expect(json[0]['Best Finish']).toEqual('2');
     });
@@ -278,7 +278,7 @@ describe('#createSplitCsv', () => {
           playerId1,
         ]
       };
-      const value = createSplitCsv(seasonConfig, results);
+      const value = createSplitCsv(seasonConfig, results, [playerId1]);
       const json = csvParse(value, {columns: true});
       expect(json[0]['Best Finish']).toEqual('8');
     });
@@ -299,9 +299,28 @@ describe('#createSplitCsv', () => {
           playerId1,
         ]
       };
-      const value = createSplitCsv(seasonConfig, results);
+      const value = createSplitCsv(seasonConfig, results, [playerId1]);
       const json = csvParse(value, {columns: true});
       expect(json[0]['avg']).toEqual('5');
+    });
+
+    it('[bugfix] round to the nearest int', () => {
+      const playerId1 = `S${faker.random.number()}`;
+      const seasonConfig = createSeasonConfig();
+      const driver1 = createConsolidatedRaceResultsDriver({
+        finishingPositions: [1, 2],
+      });
+      const results = {
+        drivers: {
+          [playerId1]: driver1,
+        },
+        results: [
+          playerId1,
+        ]
+      };
+      const value = createSplitCsv(seasonConfig, results, [playerId1]);
+      const json = csvParse(value, {columns: true});
+      expect(json[0]['avg']).toEqual('2');
     });
 
     it('ignores missing race weeks', () => {
@@ -318,7 +337,7 @@ describe('#createSplitCsv', () => {
           playerId1,
         ]
       };
-      const value = createSplitCsv(seasonConfig, results);
+      const value = createSplitCsv(seasonConfig, results, [playerId1]);
       const json = csvParse(value, {columns: true});
       expect(json[0]['avg']).toEqual('8');
     });
