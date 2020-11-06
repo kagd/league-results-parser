@@ -6,7 +6,7 @@ function createSplitCsv(seasonConfig, results){
   const firstPlace = results.drivers[results.results[0]];
   const data = results.results.map(function(playerId){
     const driverResult = results.drivers[playerId];
-    const racePositions = raceNames.reduce(function(memo, raceName, index){
+    const racePositions = raceNames.reduce(function(memo, racePos, index){
       memo.push(driverResult.finishingPositions[index] > -1 ? driverResult.finishingPositions[index] : '');
       return memo;
     }, []);
@@ -20,6 +20,8 @@ function createSplitCsv(seasonConfig, results){
       }
       return memo;
     }, { wins: 0, podiums: 0 });
+    // remove empty values before finding min value
+    const bestFinish = Math.min(...driverResult.finishingPositions.filter((pos) => pos != undefined))
 
     return [
       driverResult.carNumber,
@@ -29,14 +31,15 @@ function createSplitCsv(seasonConfig, results){
       ...racePositions,
       stats.wins,
       'TODO',
-      stats.podiums
+      stats.podiums,
+      Math.min(...driverResult.finishingPositions.filter((pos) => pos != undefined))
     ]
   });
 
   return stringify(
     data, 
     {
-      columns: ['#', 'Driver', 'Pts', 'Diff', ...raceNames, 'Wins', 'Poles', 'Podiums'],
+      columns: ['#', 'Driver', 'Pts', 'Diff', ...raceNames, 'Wins', 'Poles', 'Podiums', 'Best Finish'],
       header: true,
     },
     function(err, data){

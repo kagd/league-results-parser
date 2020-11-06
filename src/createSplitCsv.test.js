@@ -199,4 +199,46 @@ describe('#createSplitCsv', () => {
     expect(json[1][seasonConfig.races[0].name]).toEqual('2');
     expect(json[1][seasonConfig.races[1].name]).toEqual('4');
   });
+
+  describe('Best Finish', () => {
+    it('shows best finish', () => {
+      const playerId1 = `S${faker.random.number()}`;
+      const seasonConfig = createSeasonConfig();
+      const driver1 = createConsolidatedRaceResultsDriver({
+        finishingPositions: [8, 2],
+        totalPoints: 66,
+      });
+      const results = {
+        drivers: {
+          [playerId1]: driver1,
+        },
+        results: [
+          playerId1,
+        ]
+      };
+      const value = createSplitCsv(seasonConfig, results);
+      const json = csvParse(value, {columns: true});
+      expect(json[0]['Best Finish']).toEqual('2');
+    });
+
+    it('ignores empty values', () => {
+      const playerId1 = `S${faker.random.number()}`;
+      const seasonConfig = createSeasonConfig();
+      const driver1 = createConsolidatedRaceResultsDriver({
+        finishingPositions: [,8],
+        totalPoints: 66,
+      });
+      const results = {
+        drivers: {
+          [playerId1]: driver1,
+        },
+        results: [
+          playerId1,
+        ]
+      };
+      const value = createSplitCsv(seasonConfig, results);
+      const json = csvParse(value, {columns: true});
+      expect(json[0]['Best Finish']).toEqual('8');
+    });
+  });
 });
