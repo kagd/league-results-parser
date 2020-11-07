@@ -1,6 +1,6 @@
 const stringify = require('csv-stringify/lib/sync');
 
-function createSplitCsv(seasonConfig, results, polePositionPlayerIds){
+function createSplitCsv(seasonConfig, results, polePositionPlayerIds, fastestLaps){
   const raceNames = seasonConfig.races.map((race) => race.name);
 
   const firstPlace = results.drivers[results.results[0]];
@@ -25,6 +25,7 @@ function createSplitCsv(seasonConfig, results, polePositionPlayerIds){
 
     const bestFinish = Math.min(...nonEmptyFinishingPositions);
     const poles = polePositionPlayerIds.filter((id) => id === playerId).length;
+    const fastestLapCount = fastestLaps.filter((id) => id === playerId).length;
     const average = Math.round(nonEmptyFinishingPositions.reduce((memo, pos) => memo + pos, 0) / nonEmptyFinishingPositions.length);
 
     // each value in this array must match the order of the columns below in `stringify` columns
@@ -38,14 +39,15 @@ function createSplitCsv(seasonConfig, results, polePositionPlayerIds){
       poles,
       stats.podiums,
       bestFinish,
-      average
+      average,
+      fastestLapCount
     ]
   });
 
   return stringify(
     data, 
     {
-      columns: ['#', 'Driver', 'Pts', 'Diff', ...raceNames, 'Wins', 'Poles', 'Podiums', 'Best Finish', 'avg'],
+      columns: ['#', 'Driver', 'Pts', 'Diff', ...raceNames, 'Wins', 'Poles', 'Podiums', 'Best Finish', 'Average Finish', 'Fastest Lap'],
       header: true,
     },
     function(err, data){

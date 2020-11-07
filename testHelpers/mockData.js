@@ -22,10 +22,19 @@ function createSeasonConfig(overrides = {}) {
         format: "endurance",
       },
     ],
-    ...overrides
+    ...overrides,
   };
 }
 function createRaceResults(drivers) {
+  const laps = drivers.map(function (driver) {
+    return {
+      carId: driver.car.carId,
+      driverIndex: driver.currentDriverIndex,
+      laptime: driver.timing.bestLap,
+      isValidForBest: true,
+      splits: driver.timing.bestSplits,
+    };
+  });
   return {
     sessionType: "R",
     trackName: "zolder_2019",
@@ -42,6 +51,7 @@ function createRaceResults(drivers) {
       type: 1,
       leaderBoardLines: drivers,
     },
+    laps,
   };
 }
 function createDriver(overrides = {}) {
@@ -80,7 +90,7 @@ function createDriver(overrides = {}) {
   };
 }
 
-function createConsolidatedRaceResultsDriver(overrides = {}){
+function createConsolidatedRaceResultsDriver(overrides = {}) {
   return {
     carNumber: faker.random.number(999),
     carModel: 1,
@@ -88,8 +98,8 @@ function createConsolidatedRaceResultsDriver(overrides = {}){
     finishingPositions: [1, 2, 10],
     racePoints: [36, 30, 9],
     totalPoints: 75,
-    ...overrides
-  }
+    ...overrides,
+  };
 }
 
 module.exports = {
@@ -97,5 +107,5 @@ module.exports = {
   createRaceResults,
   createDriver,
   createConsolidatedRaceResultsDriver,
-  createPlayerId
+  createPlayerId,
 };

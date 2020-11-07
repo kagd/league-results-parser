@@ -12,6 +12,7 @@ function loadSplitRaces(seasonConfig, split){
         sessionResult: {
           leaderBoardLines: [],
         },
+        laps: []
       });
     }
     return memo;
