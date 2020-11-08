@@ -1,9 +1,8 @@
 const stringify = require('csv-stringify/lib/sync');
 
-function createSplitCsv(seasonConfig, results, polePositionPlayerIds, fastestLaps){
+function createSplitCsv(seasonConfig, results, polePositionPlayers, fastestLaps){
   const raceNames = seasonConfig.races.map((race) => race.name);
 
-  const firstPlace = results.drivers[results.results[0]];
   const data = results.results.map(function(playerId){
     const driverResult = results.drivers[playerId];
     const racePositions = raceNames.reduce(function(memo, racePos, index){
@@ -24,7 +23,13 @@ function createSplitCsv(seasonConfig, results, polePositionPlayerIds, fastestLap
     }, { wins: 0, podiums: 0 });
 
     const bestFinish = Math.min(...nonEmptyFinishingPositions);
-    const poles = polePositionPlayerIds.filter((id) => id === playerId).length;
+    const poles = polePositionPlayers.reduce(function(memo, polePlayer){
+      if(polePlayer.playerId === playerId){
+        memo.count++;
+        memo.points = memo.points + polePlayer.points;
+      }
+      return memo;
+    }, {count: 0, points: 0});
     const fastestLap = fastestLaps.reduce(function(memo, fLap){
       if(fLap.playerId === playerId){
         memo.count++;
@@ -33,17 +38,17 @@ function createSplitCsv(seasonConfig, results, polePositionPlayerIds, fastestLap
       return memo;
     }, {count: 0, points: 0});
     const average = Math.round(nonEmptyFinishingPositions.reduce((memo, pos) => memo + pos, 0) / nonEmptyFinishingPositions.length);
-    const totalPoints = driverResult.totalPoints + fastestLap.points;
+    const totalPoints = driverResult.totalPoints + fastestLap.points + poles.points;
 
     // each value in this array must match the order of the columns below in `stringify` columns
     return [
       driverResult.carNumber,
       driverResult.name,
       totalPoints,
-      0, // driverResult.totalPoints - firstPlace.totalPoints, TODO - fix this now that driverResult.totalPoints doesn't accurately represent total points
+      0, // Diff - filled in after all records have been compiled to account for fastest lap and pole point additions
       ...racePositions,
       stats.wins,
-      poles,
+      poles.count,
       stats.podiums,
       bestFinish,
       average,
@@ -51,6 +56,7 @@ function createSplitCsv(seasonConfig, results, polePositionPlayerIds, fastestLap
     ]
   });
 
+  // Compile Diff for each row
   const firstPlaceTotalPoints = data[0][2];
   data.forEach(function(dataRow){
     dataRow[3] = dataRow[2] - firstPlaceTotalPoints;

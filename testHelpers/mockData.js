@@ -10,10 +10,12 @@ function createSeasonConfig(overrides = {}) {
       endurance: {
         race: [50, 25, 10],
         fastestLap: 1,
+        pole: 2
       },
       sprint: {
         race: [20, 15, 5],
         fastestLap: 0.5,
+        pole: 1
       },
       endurancePointsAfterEnd: 2,
       sprintPointsAfterEnd: 1,

@@ -45,6 +45,27 @@ describe('#createSplitCsv', () => {
     expect(json[0].Wins).toEqual('1');
   });
 
+  describe('pole positions', () => {
+    it('shows the number of pole positions for the driver', () => {
+      const playerId1 = `S${faker.random.number()}`;
+      const playerId2 = `S${faker.random.number()}`;
+      const seasonConfig = createSeasonConfig();
+      const results = {
+        drivers: {
+          [playerId1]: createConsolidatedRaceResultsDriver(),
+          [playerId2]: createConsolidatedRaceResultsDriver(),
+        },
+        results: [
+          playerId1,
+          playerId2
+        ]
+      };
+      const value = createSplitCsv(seasonConfig, results, [{playerId: playerId1, points: 0.5}, {playerId: playerId1, points: 1}], []);
+      const json = csvParse(value, {columns: true});
+      expect(json[0].Poles).toEqual('2');
+    });
+  });
+
   describe('podiums', () => {
     it('adds all podiums for a driver', () => {
       const playerId = `S${faker.random.number()}`;
@@ -165,6 +186,24 @@ describe('#createSplitCsv', () => {
       const value = createSplitCsv(seasonConfig, results, [playerId], [{playerId, points: 1}]);
       const json = csvParse(value, {columns: true});
       expect(json[0].Pts).toEqual('67');
+    });
+
+    it('adds pole position points to total points', () => {
+      const playerId = `S${faker.random.number()}`;
+      const seasonConfig = createSeasonConfig();
+      const results = {
+        drivers: {
+          [playerId]: createConsolidatedRaceResultsDriver({
+            totalPoints: 66,
+          }),
+        },
+        results: [
+          playerId
+        ]
+      };
+      const value = createSplitCsv(seasonConfig, results, [{playerId, points: 0.5}], [{playerId, points: 1}]);
+      const json = csvParse(value, {columns: true});
+      expect(json[0].Pts).toEqual('67.5');
     });
   });
 

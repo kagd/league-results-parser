@@ -20,8 +20,9 @@ function getPolePositions(seasonConfig, qualifiers){
     if(qualifiers[index].sessionResult.leaderBoardLines.length === 0){
       return memo;
     }
+    const points = seasonConfig.points[race.format].pole;
     const polePositionPlayerId = qualifiers[index].sessionResult.leaderBoardLines[0].currentDriver.playerId;
-    memo.push(polePositionPlayerId);
+    memo.push({playerId: polePositionPlayerId, points});
     return memo;
   }, []);
 }

@@ -32,6 +32,8 @@ describe("getPolePositions", () => {
     const spa = createQualifier(playerId3, playerId2, playerId1);
 
     const value = getPolePositions(createSeasonConfig(), [zolder, spa]);
-    expect(value).toEqual([playerId1, playerId3])
+    // playerId1 has pole in a sprint race
+    // playerId2 has pole in an enduro
+    expect(value).toEqual([{playerId: playerId1, points: 1}, {playerId: playerId3, points: 2}])
   });
 });
