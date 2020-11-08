@@ -201,37 +201,72 @@ describe('#createSplitCsv', () => {
     expect(json[2].Driver).toEqual(driver3.name);
   });
 
-  it.skip('lists the point differential from the season leader', () => {
-    const playerId1 = `S${faker.random.number()}`;
-    const playerId2 = `S${faker.random.number()}`;
-    const playerId3 = `S${faker.random.number()}`;
-    const seasonConfig = createSeasonConfig();
-    const driver1 = createConsolidatedRaceResultsDriver({
-      totalPoints: 66,
+  describe('diff', () => {
+    it('lists the point differential from the season leader', () => {
+      const playerId1 = `S${faker.random.number()}`;
+      const playerId2 = `S${faker.random.number()}`;
+      const playerId3 = `S${faker.random.number()}`;
+      const seasonConfig = createSeasonConfig();
+      const driver1 = createConsolidatedRaceResultsDriver({
+        totalPoints: 66,
+      });
+      const driver2 = createConsolidatedRaceResultsDriver({
+        totalPoints: 60,
+      });
+      const driver3 = createConsolidatedRaceResultsDriver({
+        totalPoints: 34,
+      });
+      const results = {
+        drivers: {
+          [playerId1]: driver1,
+          [playerId2]: driver2,
+          [playerId3]: driver3,
+        },
+        results: [
+          playerId1,
+          playerId2,
+          playerId3
+        ]
+      };
+      const value = createSplitCsv(seasonConfig, results, [playerId1, playerId2, playerId3], []);
+      const json = csvParse(value, {columns: true});
+      expect(json[0].Diff).toEqual('0');
+      expect(json[1].Diff).toEqual('-6');
+      expect(json[2].Diff).toEqual('-32');
     });
-    const driver2 = createConsolidatedRaceResultsDriver({
-      totalPoints: 60,
+
+    it('accounts for fastest lap', () => {
+      const playerId1 = `S${faker.random.number()}`;
+      const playerId2 = `S${faker.random.number()}`;
+      const playerId3 = `S${faker.random.number()}`;
+      const seasonConfig = createSeasonConfig();
+      const driver1 = createConsolidatedRaceResultsDriver({
+        totalPoints: 66,
+      });
+      const driver2 = createConsolidatedRaceResultsDriver({
+        totalPoints: 60,
+      });
+      const driver3 = createConsolidatedRaceResultsDriver({
+        totalPoints: 34,
+      });
+      const results = {
+        drivers: {
+          [playerId1]: driver1,
+          [playerId2]: driver2,
+          [playerId3]: driver3,
+        },
+        results: [
+          playerId1,
+          playerId2,
+          playerId3
+        ]
+      };
+      const value = createSplitCsv(seasonConfig, results, [playerId1, playerId2, playerId3], [{playerId: playerId1, points: 0.5}, {playerId: playerId2, points: 1}]);
+      const json = csvParse(value, {columns: true});
+      expect(json[0].Diff).toEqual('0'); // playerId1 placed 1st and had 1 fastest lap
+      expect(json[1].Diff).toEqual('-5.5'); // playerId2 placed 2nd and had 1 fastest lap
+      expect(json[2].Diff).toEqual('-32.5');
     });
-    const driver3 = createConsolidatedRaceResultsDriver({
-      totalPoints: 34,
-    });
-    const results = {
-      drivers: {
-        [playerId1]: driver1,
-        [playerId2]: driver2,
-        [playerId3]: driver3,
-      },
-      results: [
-        playerId1,
-        playerId2,
-        playerId3
-      ]
-    };
-    const value = createSplitCsv(seasonConfig, results, [playerId1, playerId2, playerId3], []);
-    const json = csvParse(value, {columns: true});
-    expect(json[0].Diff).toEqual('0');
-    expect(json[1].Diff).toEqual('-6');
-    expect(json[2].Diff).toEqual('-32');
   });
 
   it('lists the finishing position for each race', () => {

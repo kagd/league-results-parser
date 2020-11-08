@@ -40,7 +40,7 @@ function createSplitCsv(seasonConfig, results, polePositionPlayerIds, fastestLap
       driverResult.carNumber,
       driverResult.name,
       totalPoints,
-      '', // driverResult.totalPoints - firstPlace.totalPoints, TODO - fix this now that driverResult.totalPoints doesn't accurately represent total points
+      0, // driverResult.totalPoints - firstPlace.totalPoints, TODO - fix this now that driverResult.totalPoints doesn't accurately represent total points
       ...racePositions,
       stats.wins,
       poles,
@@ -49,6 +49,11 @@ function createSplitCsv(seasonConfig, results, polePositionPlayerIds, fastestLap
       average,
       fastestLap.count
     ]
+  });
+
+  const firstPlaceTotalPoints = data[0][2];
+  data.forEach(function(dataRow){
+    dataRow[3] = dataRow[2] - firstPlaceTotalPoints;
   });
 
   return stringify(
