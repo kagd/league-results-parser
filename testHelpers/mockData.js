@@ -7,8 +7,12 @@ function createPlayerId() {
 function createSeasonConfig(overrides = {}) {
   return {
     points: {
-      endurance: [50, 25, 10],
-      sprint: [20, 15, 5],
+      endurance: {
+        race: [50, 25, 10]
+      },
+      sprint: {
+        race: [20, 15, 5]
+      },
       endurancePointsAfterEnd: 2,
       sprintPointsAfterEnd: 1,
     },
