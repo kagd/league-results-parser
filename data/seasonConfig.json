@@ -26,6 +26,32 @@
       2,
       1
     ],
+    "multi-sprint": [
+      50,
+      45,
+      40,
+      36,
+      33,
+      30,
+      27,
+      24,
+      21,
+      19,
+      17,
+      15,
+      13,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
     "sprint": [
       25,
       22.5,
@@ -53,12 +79,13 @@
       0.5
     ],
     "endurancePointsAfterEnd": 1,
+    "multi-sprintPointsAfterEnd": 1,
     "sprintPointsAfterEnd": 0
   },
   "races": [
     {
       "name": "Zolder",
-      "format": "sprint"
+      "format": "multi-sprint"
     },
     {
       "name": "Misano",
@@ -70,7 +97,7 @@
     },
     {
       "name": "Nurburgring",
-      "format": "sprint"
+      "format": "multi-sprint"
     },
     {
       "name": "Monza",
@@ -81,12 +108,8 @@
       "format": "endurance"
     },
     {
-      "name": "Nurburgring",
-      "format": "sprint"
-    },
-    {
       "name": "Hungaroring",
-      "format": "sprint"
+      "format": "multi-sprint"
     },
     {
       "name": "Zandvoort",
@@ -98,7 +121,7 @@
     },
     {
       "name": "Suzuka",
-      "format": "sprint"
+      "format": "multi-sprint"
     }
   ]
 }
