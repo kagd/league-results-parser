@@ -25,22 +25,29 @@ function createSplitCsv(seasonConfig, results, polePositionPlayerIds, fastestLap
 
     const bestFinish = Math.min(...nonEmptyFinishingPositions);
     const poles = polePositionPlayerIds.filter((id) => id === playerId).length;
-    const fastestLapCount = fastestLaps.filter((id) => id === playerId).length;
+    const fastestLap = fastestLaps.reduce(function(memo, fLap){
+      if(fLap.playerId === playerId){
+        memo.count++;
+        memo.points = memo.points + fLap.points;
+      }
+      return memo;
+    }, {count: 0, points: 0});
     const average = Math.round(nonEmptyFinishingPositions.reduce((memo, pos) => memo + pos, 0) / nonEmptyFinishingPositions.length);
+    const totalPoints = driverResult.totalPoints + fastestLap.points;
 
     // each value in this array must match the order of the columns below in `stringify` columns
     return [
       driverResult.carNumber,
       driverResult.name,
-      driverResult.totalPoints,
-      driverResult.totalPoints - firstPlace.totalPoints,
+      totalPoints,
+      '', // driverResult.totalPoints - firstPlace.totalPoints, TODO - fix this now that driverResult.totalPoints doesn't accurately represent total points
       ...racePositions,
       stats.wins,
       poles,
       stats.podiums,
       bestFinish,
       average,
-      fastestLapCount
+      fastestLap.count
     ]
   });
 

@@ -27,7 +27,9 @@ describe('fastestLaps', () => {
     const raceResults = createRaceResults([driver1, driver2]);
     const raceResults2 = createRaceResults([driver1, driver3, driver2]);
     const value = fastestLaps(createSeasonConfig(), [raceResults, raceResults2]);
-    expect(value[0]).toEqual(driver2.currentDriver.playerId);
-    expect(value[1]).toEqual(driver3.currentDriver.playerId);
+    expect(value[0].playerId).toEqual(driver2.currentDriver.playerId);
+    expect(value[0].points).toEqual(0.5); // driver2 has the fastest lap in race 1 which is sprint format
+    expect(value[1].playerId).toEqual(driver3.currentDriver.playerId);
+    expect(value[1].points).toEqual(1); // driver3 has the fastest lap in race 2 which is enduro format
   });
 });

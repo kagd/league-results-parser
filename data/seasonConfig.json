@@ -26,7 +26,9 @@
         3,
         2,
         1
-      ]
+      ],
+      "pole": 1,
+      "fastestLap": 1
     },
     "multi-sprint": {
       "race": [
@@ -54,7 +56,9 @@
         3,
         2,
         1
-      ]
+      ],
+      "pole": 1,
+      "fastestLap": 1
     },
     "sprint": {
       "race": [
@@ -82,7 +86,9 @@
         1.5,
         1,
         0.5
-      ]
+      ],
+      "pole": 0.5,
+      "fastestLap": 0.5
     },
     "endurancePointsAfterEnd": 1,
     "multi-sprintPointsAfterEnd": 1,

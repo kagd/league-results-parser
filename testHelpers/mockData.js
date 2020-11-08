@@ -8,10 +8,12 @@ function createSeasonConfig(overrides = {}) {
   return {
     points: {
       endurance: {
-        race: [50, 25, 10]
+        race: [50, 25, 10],
+        fastestLap: 1,
       },
       sprint: {
-        race: [20, 15, 5]
+        race: [20, 15, 5],
+        fastestLap: 0.5,
       },
       endurancePointsAfterEnd: 2,
       sprintPointsAfterEnd: 1,
