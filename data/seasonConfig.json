@@ -88,7 +88,11 @@
       "format": "multi-sprint"
     },
     {
-      "name": "Misano",
+      "name": "Misano Race 1",
+      "format": "sprint"
+    },
+    {
+      "name": "Misano Race 2",
       "format": "sprint"
     },
     {
@@ -100,7 +104,11 @@
       "format": "multi-sprint"
     },
     {
-      "name": "Monza",
+      "name": "Monza Race 1",
+      "format": "sprint"
+    },
+    {
+      "name": "Monza Race 2",
       "format": "sprint"
     },
     {
@@ -112,7 +120,11 @@
       "format": "multi-sprint"
     },
     {
-      "name": "Zandvoort",
+      "name": "Zandvoort Race 1",
+      "format": "sprint"
+    },
+    {
+      "name": "Zandvoort Race 2",
       "format": "sprint"
     },
     {
