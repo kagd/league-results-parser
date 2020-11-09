@@ -66,11 +66,11 @@ function addDiffValuesToCsvRows(csvRows) {
   });
 }
 
-function createSplitCsv(races, results, polePositionPlayers, fastestLaps){
+function createSplitCsv(races, finishingOrderResults, drivers, polePositionPlayers, fastestLaps){
   const raceNames = races.map((race) => race.name);
 
-  const data = results.results.map(function(playerId) {
-    return createCsvRowForPlayerId(playerId, results.drivers, raceNames, polePositionPlayers, fastestLaps)
+  const data = finishingOrderResults.map(function(playerId) {
+    return createCsvRowForPlayerId(playerId, drivers, raceNames, polePositionPlayers, fastestLaps)
   });
 
   const dataWithDiff = addDiffValuesToCsvRows(data);

@@ -1,11 +1,11 @@
-const {compileSplit} = require('./splits');
+const {finishingOrderByPlayerId} = require('./splits');
 const {
   createConsolidatedRaceResultsDriver,
   createPlayerId,
 } = require('../testHelpers/mockData');
 
-describe('#compileSplit', () => {
-  it('returns a results array of playerIds sorted by totalPoints', () => {
+describe('#finishingOrderByPlayerId', () => {
+  it('returns an array of playerIds sorted by totalPoints', () => {
     const playerId1 = createPlayerId();
     const playerId2 = createPlayerId();
     const playerId3 = createPlayerId();
@@ -21,9 +21,9 @@ describe('#compileSplit', () => {
       }),
     };
 
-    const value = compileSplit(drivers);
-    expect(value.results[0]).toEqual(playerId2);
-    expect(value.results[1]).toEqual(playerId1);
-    expect(value.results[2]).toEqual(playerId3);
+    const value = finishingOrderByPlayerId(drivers);
+    expect(value[0]).toEqual(playerId2);
+    expect(value[1]).toEqual(playerId1);
+    expect(value[2]).toEqual(playerId3);
   });
 });

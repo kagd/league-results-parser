@@ -21,7 +21,7 @@ function loadSplitRaces(seasonConfig, split){
   });
 }
 
-function compileSplit(drivers){
+function finishingOrderByPlayerId(drivers){
   const pointTuples = Object.entries(drivers).map(function([playerId, value]){
     return [playerId, value.totalPoints];
   });
@@ -39,10 +39,10 @@ function compileSplit(drivers){
   });
   const playerIds = results.map((tuple) => tuple[0]);
 
-  return {drivers, results: playerIds};
+  return playerIds;
 }
 
 module.exports = {
-  compileSplit,
+  finishingOrderByPlayerId,
   loadSplitRaces,
 };
