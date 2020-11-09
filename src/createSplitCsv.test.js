@@ -40,7 +40,7 @@ describe('#createSplitCsv', () => {
         playerId
       ]
     }
-    const value = createSplitCsv(seasonConfig, results, [playerId], []);
+    const value = createSplitCsv(seasonConfig.races, results, [playerId], []);
     const json = csvParse(value, {columns: true});
     expect(json[0].Wins).toEqual('1');
   });
@@ -60,7 +60,7 @@ describe('#createSplitCsv', () => {
           playerId2
         ]
       };
-      const value = createSplitCsv(seasonConfig, results, [{playerId: playerId1, points: 0.5}, {playerId: playerId1, points: 1}], []);
+      const value = createSplitCsv(seasonConfig.races, results, [{playerId: playerId1, points: 0.5}, {playerId: playerId1, points: 1}], []);
       const json = csvParse(value, {columns: true});
       expect(json[0].Poles).toEqual('2');
     });
@@ -104,7 +104,7 @@ describe('#createSplitCsv', () => {
           playerId
         ]
       }
-      const value = createSplitCsv(seasonConfig, results, [playerId], []);
+      const value = createSplitCsv(seasonConfig.races, results, [playerId], []);
       const json = csvParse(value, {columns: true});
       expect(json[0].Podiums).toEqual('3');
     });
@@ -146,7 +146,7 @@ describe('#createSplitCsv', () => {
           playerId
         ]
       }
-      const value = createSplitCsv(seasonConfig, results, [playerId], []);
+      const value = createSplitCsv(seasonConfig.races, results, [playerId], []);
       const json = csvParse(value, {columns: true});
       expect(json[0].Podiums).toEqual('2');
     });
@@ -165,7 +165,7 @@ describe('#createSplitCsv', () => {
           playerId
         ]
       };
-      const value = createSplitCsv(seasonConfig, results, [playerId], []);
+      const value = createSplitCsv(seasonConfig.races, results, [playerId], []);
       const json = csvParse(value, {columns: true});
       expect(json[0].Pts).toEqual('66');
     });
@@ -183,7 +183,7 @@ describe('#createSplitCsv', () => {
           playerId
         ]
       };
-      const value = createSplitCsv(seasonConfig, results, [playerId], [{playerId, points: 1}]);
+      const value = createSplitCsv(seasonConfig.races, results, [playerId], [{playerId, points: 1}]);
       const json = csvParse(value, {columns: true});
       expect(json[0].Pts).toEqual('67');
     });
@@ -201,7 +201,7 @@ describe('#createSplitCsv', () => {
           playerId
         ]
       };
-      const value = createSplitCsv(seasonConfig, results, [{playerId, points: 0.5}], [{playerId, points: 1}]);
+      const value = createSplitCsv(seasonConfig.races, results, [{playerId, points: 0.5}], [{playerId, points: 1}]);
       const json = csvParse(value, {columns: true});
       expect(json[0].Pts).toEqual('67.5');
     });
@@ -233,7 +233,7 @@ describe('#createSplitCsv', () => {
         playerId3
       ]
     };
-    const value = createSplitCsv(seasonConfig, results, [playerId1, playerId2, playerId3], []);
+    const value = createSplitCsv(seasonConfig.races, results, [playerId1, playerId2, playerId3], []);
     const json = csvParse(value, {columns: true});
     expect(json[0].Driver).toEqual(driver1.name);
     expect(json[1].Driver).toEqual(driver2.name);
@@ -267,7 +267,7 @@ describe('#createSplitCsv', () => {
           playerId3
         ]
       };
-      const value = createSplitCsv(seasonConfig, results, [playerId1, playerId2, playerId3], []);
+      const value = createSplitCsv(seasonConfig.races, results, [playerId1, playerId2, playerId3], []);
       const json = csvParse(value, {columns: true});
       expect(json[0].Diff).toEqual('0');
       expect(json[1].Diff).toEqual('-6');
@@ -300,7 +300,7 @@ describe('#createSplitCsv', () => {
           playerId3
         ]
       };
-      const value = createSplitCsv(seasonConfig, results, [playerId1, playerId2, playerId3], [{playerId: playerId1, points: 0.5}, {playerId: playerId2, points: 1}]);
+      const value = createSplitCsv(seasonConfig.races, results, [playerId1, playerId2, playerId3], [{playerId: playerId1, points: 0.5}, {playerId: playerId2, points: 1}]);
       const json = csvParse(value, {columns: true});
       expect(json[0].Diff).toEqual('0'); // playerId1 placed 1st and had 1 fastest lap
       expect(json[1].Diff).toEqual('-5.5'); // playerId2 placed 2nd and had 1 fastest lap
@@ -330,7 +330,7 @@ describe('#createSplitCsv', () => {
         playerId2,
       ]
     };
-    const value = createSplitCsv(seasonConfig, results, [playerId1, playerId2], []);
+    const value = createSplitCsv(seasonConfig.races, results, [playerId1, playerId2], []);
     const json = csvParse(value, {columns: true});
     expect(json[0][seasonConfig.races[0].name]).toEqual('1');
     expect(json[0][seasonConfig.races[1].name]).toEqual('3');
@@ -353,7 +353,7 @@ describe('#createSplitCsv', () => {
           playerId1,
         ]
       };
-      const value = createSplitCsv(seasonConfig, results, [playerId1], []);
+      const value = createSplitCsv(seasonConfig.races, results, [playerId1], []);
       const json = csvParse(value, {columns: true});
       expect(json[0]['Best Finish']).toEqual('2');
     });
@@ -372,7 +372,7 @@ describe('#createSplitCsv', () => {
           playerId1,
         ]
       };
-      const value = createSplitCsv(seasonConfig, results, [playerId1], []);
+      const value = createSplitCsv(seasonConfig.races, results, [playerId1], []);
       const json = csvParse(value, {columns: true});
       expect(json[0]['Best Finish']).toEqual('8');
     });
@@ -393,7 +393,7 @@ describe('#createSplitCsv', () => {
           playerId1,
         ]
       };
-      const value = createSplitCsv(seasonConfig, results, [playerId1], []);
+      const value = createSplitCsv(seasonConfig.races, results, [playerId1], []);
       const json = csvParse(value, {columns: true});
       expect(json[0]['Average Finish']).toEqual('5');
     });
@@ -412,7 +412,7 @@ describe('#createSplitCsv', () => {
           playerId1,
         ]
       };
-      const value = createSplitCsv(seasonConfig, results, [playerId1], []);
+      const value = createSplitCsv(seasonConfig.races, results, [playerId1], []);
       const json = csvParse(value, {columns: true});
       expect(json[0]['Average Finish']).toEqual('2');
     });
@@ -431,7 +431,7 @@ describe('#createSplitCsv', () => {
           playerId1,
         ]
       };
-      const value = createSplitCsv(seasonConfig, results, [playerId1], []);
+      const value = createSplitCsv(seasonConfig.races, results, [playerId1], []);
       const json = csvParse(value, {columns: true});
       expect(json[0]['Average Finish']).toEqual('8');
     });
@@ -458,7 +458,7 @@ describe('#createSplitCsv', () => {
           playerId2
         ]
       };
-      const value = createSplitCsv(seasonConfig, results, [playerId1], [{playerId: playerId2, points: 0.5}, {playerId: playerId1, points: 1}]);
+      const value = createSplitCsv(seasonConfig.races, results, [playerId1], [{playerId: playerId2, points: 0.5}, {playerId: playerId1, points: 1}]);
       const json = csvParse(value, {columns: true});
       // each driver has a fastest lap
       expect(json[0]['Fastest Lap']).toEqual('1');

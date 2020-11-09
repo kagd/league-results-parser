@@ -1,43 +1,45 @@
-const {consolidateRaces} = require('./consolidateRaces');
 const { camelCase } = require('lodash');
 
-function loadSplitRaces(seasonConfig, split){
-  return seasonConfig.races.reduce((memo, race) => {
-    const filepath = `../data/${split}/${camelCase(race.name)}-r.json`;
-    try {
-      memo.push(require(filepath));
-    } catch (error) {
-      console.log(`path ${filepath} not found`);
-      memo.push({
-        sessionResult: {
-          leaderBoardLines: [],
-        },
-        laps: []
-      });
-    }
-    return memo;
-  }, []);
+function loadSplitRace(raceName, split) {
+  const filepath = `../data/${split}/${camelCase(raceName)}-r.json`;
+  try {
+    return require(filepath);
+  } catch (error) {
+    console.log(`path ${filepath} not found`);
+    return {
+      sessionResult: {
+        leaderBoardLines: [],
+      },
+      laps: []
+    };
+  }
 }
 
-function compileSplit(seasonConfig, races){
-  const drivers = consolidateRaces(seasonConfig, races);
+function loadSplitRaces(seasonConfig, split){
+  return seasonConfig.races.map(function(race) {
+    return loadSplitRace(race.name, split);
+  });
+}
 
-  const pointTuples = Object.entries(drivers).reduce(function(memo, [playerId, value]){
-    memo.push([playerId, value.totalPoints]);
-    return memo;
-  }, []);
+function compileSplit(drivers){
+  const pointTuples = Object.entries(drivers).map(function([playerId, value]){
+    return [playerId, value.totalPoints];
+  });
 
   const results = pointTuples.sort(function(tuple1, tuple2){
-    if(tuple1[1] > tuple2[1]){
+    const tuple1TotalPoints = tuple1[1];
+    const tuple2TotalPoints = tuple2[1];
+    if(tuple1TotalPoints > tuple2TotalPoints){
       return -1;
     }
-    if(tuple1[1] < tuple2[1]){
+    if(tuple1TotalPoints < tuple2TotalPoints){
       return 1;
     }
     return 0;
-  }).map((tuple) => tuple[0]);
+  });
+  const playerIds = results.map((tuple) => tuple[0]);
 
-  return {drivers, results};
+  return {drivers, results: playerIds};
 }
 
 module.exports = {

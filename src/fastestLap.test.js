@@ -1,7 +1,5 @@
 const {
   createSeasonConfig,
-  createConsolidatedRaceResultsDriver,
-  createPlayerId,
   createRaceResults,
   createDriver
 } = require('../testHelpers/mockData');
