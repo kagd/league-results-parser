@@ -11,7 +11,7 @@ more setup).
 1. Open the Command Prompt. You can do this by typing `cmd` in the windows search and hitting enter.
 1. Next you will need to navigation to the `leagueResultsParser` location via the command prompt. Type `cd ~/Documents/leagueResultsParser`.
 1. type `npm install`. This will install all of the dependencies needed for the project to run.
-1. type `npm run build`. This is the commnad to build the championship spreadsheets located at `data/parsed`.
+1. type `npm run build`. This is the commnad to build the championship spreadsheets located at `data/final`.
 
 ## Use git/gitbash
 
@@ -20,4 +20,8 @@ more setup).
 1. type `git clone https://github.com/kagd/league-results-parser.git`. This will pull down the source files to your comp.
 1. type `cd league-results-parser`
 1. type `npm install`. This will install all of the dependencies needed for the project to run.
-1. type `npm run build`. This is the commnad to build the championship spreadsheets located at `data/parsed`.
+1. type `npm run build`. This is the commnad to build the championship spreadsheets located at `data/final`.
+
+### Notes
+
+- Data files need to be in the format `camelCaseRaceName-r.json` for race and `camelCaseRaceName-q.json` for qualification.
