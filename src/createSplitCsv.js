@@ -59,8 +59,8 @@ function createCsvRowForPlayerId(playerId, drivers, raceNames, polePositionPlaye
 
 function addDiffValuesToCsvRows(csvRows) {
   // Compile Diff for each row
-  const firstPlaceTotalPoints = csvRows[0][2];
   return csvRows.map(function(row){
+    const firstPlaceTotalPoints = csvRows[0][2];
     const diff = row[2] - firstPlaceTotalPoints;
     return [...row.slice(0, 3), diff, ...row.slice(4)];
   });

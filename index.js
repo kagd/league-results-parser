@@ -8,7 +8,7 @@ const {consolidateRaces} = require('./src/consolidateRaces');
 const { fastestLaps } = require('./src/fastestLap');
 const { parseSeasonRacesIntoClasses } = require('./src/classes');
 
-['split2'].forEach(function(split){
+['split1', 'split2'].forEach(function(split){
   const splitRaces = loadSplitRaces(seasonConfig, split);
   const splitQualifiers = loadSplitQualifiers(seasonConfig, split);
   
