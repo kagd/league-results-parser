@@ -1,7 +1,7 @@
 const { camelCase } = require('lodash');
 
 function loadSplitRace(raceName, split) {
-  const filepath = `../data/${split}/${camelCase(raceName)}-r.json`;
+  const filepath = `../data/raw/${split}/${camelCase(raceName)}-r.json`;
   try {
     return require(filepath);
   } catch (error) {

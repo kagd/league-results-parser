@@ -25,7 +25,7 @@ function consolidateRaces(seasonConfig, seasonRaceData){
     const data = seasonRaceData[raceIndex];
     // get points list for current race format
     const formatPoints = seasonConfig.points[race.format].race;
-    data.sessionResult.leaderBoardLines.forEach(function(item, driverIndex){
+    data.leaderBoardLines.forEach(function(item, driverIndex){
       let driver = memo[item.currentDriver.playerId];
       if(!driver){
         driver = memo[item.currentDriver.playerId] = createDriver(item, seasonConfig.races.length);

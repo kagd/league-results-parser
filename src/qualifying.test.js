@@ -7,20 +7,18 @@ const {
 describe("getPolePositions", () => {
   function createQualifier(playerId1, playerId2) {
     return {
-      sessionResult: {
-        leaderBoardLines: [
-          {
-            currentDriver: {
-              playerId: playerId1,
-            },
+      leaderBoardLines: [
+        {
+          currentDriver: {
+            playerId: playerId1,
           },
-          {
-            currentDriver: {
-              playerId: playerId2,
-            },
+        },
+        {
+          currentDriver: {
+            playerId: playerId2,
           },
-        ],
-      },
+        },
+      ],
     };
   }
 

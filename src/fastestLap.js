@@ -8,7 +8,7 @@ function fastestLaps(seasonConfig, seasonRaceData){
     if(!fastestLap){
       return memo;
     }
-    const raceResult = data.sessionResult.leaderBoardLines.find(function(result){
+    const raceResult = data.leaderBoardLines.find(function(result){
       return result.car.carId === fastestLap.carId;
     });
     const racePoints = seasonConfig.points[race.format].fastestLap;

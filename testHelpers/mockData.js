@@ -33,6 +33,7 @@ function createSeasonConfig(overrides = {}) {
     ...overrides,
   };
 }
+
 function createRaceResults(drivers) {
   const laps = drivers.map(function (driver) {
     return {
@@ -62,6 +63,38 @@ function createRaceResults(drivers) {
     laps,
   };
 }
+
+function createClassRaceResults(drivers) {
+  const laps = drivers.map(function (driver) {
+    return {
+      carId: driver.car.carId,
+      driverIndex: driver.currentDriverIndex,
+      laptime: driver.timing.bestLap,
+      isValidForBest: true,
+      splits: driver.timing.bestSplits,
+    };
+  });
+  return {
+    leaderBoardLines: drivers,
+    laps,
+  };
+}
+
+function createCar(overrides = {}){
+  return {
+    carId: faker.random.number(),
+    raceNumber: faker.random.number(999),
+    carModel: 1,
+    cupCategory: 2,
+    teamName: "",
+    nationality: 0,
+    carGuid: -1,
+    teamGuid: -1,
+    drivers: [],
+    ...overrides,
+  };
+}
+
 function createDriver(overrides = {}) {
   const driver = {
     firstName: faker.name.firstName(),
@@ -70,17 +103,7 @@ function createDriver(overrides = {}) {
     playerId: createPlayerId(),
   };
   return {
-    car: {
-      carId: faker.random.number(),
-      raceNumber: faker.random.number(999),
-      carModel: 1,
-      cupCategory: 2,
-      teamName: "",
-      nationality: 0,
-      carGuid: -1,
-      teamGuid: -1,
-      drivers: [driver],
-    },
+    car: createCar({drivers: [driver]}),
     currentDriver: driver,
     currentDriverIndex: 0,
     timing: {
@@ -116,4 +139,6 @@ module.exports = {
   createDriver,
   createConsolidatedRaceResultsDriver,
   createPlayerId,
+  createClassRaceResults,
+  createCar,
 };

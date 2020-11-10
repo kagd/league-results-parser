@@ -1,6 +1,6 @@
 const {
   createSeasonConfig,
-  createRaceResults,
+  createClassRaceResults,
   createDriver
 } = require('../testHelpers/mockData');
 const { fastestLaps } = require('./fastestLap');
@@ -22,8 +22,8 @@ describe('fastestLaps', () => {
         bestLap: 99999
       }
     });
-    const raceResults = createRaceResults([driver1, driver2]);
-    const raceResults2 = createRaceResults([driver1, driver3, driver2]);
+    const raceResults = createClassRaceResults([driver1, driver2]);
+    const raceResults2 = createClassRaceResults([driver1, driver3, driver2]);
     const value = fastestLaps(createSeasonConfig(), [raceResults, raceResults2]);
     expect(value[0].playerId).toEqual(driver2.currentDriver.playerId);
     expect(value[0].points).toEqual(0.5); // driver2 has the fastest lap in race 1 which is sprint format
