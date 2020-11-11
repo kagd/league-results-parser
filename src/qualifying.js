@@ -1,8 +1,9 @@
 const { camelCase } = require('lodash');
+const path = require('path');
 
 function loadSplitQualifiers(seasonConfig, split){
   return seasonConfig.races.reduce((memo, race) => {
-    const filepath = `../data/raw/${split}/${camelCase(race.name)}-q.json`;
+    const filepath = path.join(__dirname, '../', 'data', 'raw', split, `${camelCase(race.name)}-q.json`);
     try {
       memo.push(require(filepath));
     } catch (error) {

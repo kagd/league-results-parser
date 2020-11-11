@@ -1,4 +1,4 @@
-const seasonConfig = require('./data/seasonConfig.json');
+const seasonConfig = require('./src/seasonConfig.json');
 const { finishingOrderByPlayerId, loadSplitRaces } = require('./src/splits');
 const fs = require('fs');
 const path = require('path');
@@ -28,12 +28,17 @@ const { parseSeasonRacesIntoClasses } = require('./src/classes');
   // fs.writeFile(path.join(__dirname, 'data', 'final', `championship-${split}.json`), JSON.stringify({drivers, results: finishingOrderResults}, null, 2), function(err) {
   //   if (err) {throw err};
   // });
+
+  const finalDir = path.join(__dirname, 'data', 'final');
+  if (!fs.existsSync(finalDir)){
+    fs.mkdirSync(finalDir);
+  }
   
-  fs.writeFile(path.join(__dirname, 'data', 'final', `championship-${split}-gt3.csv`), gt3CsvValue, function(err) {
+  fs.writeFile(path.join(finalDir, `championship-${split}-gt3.csv`), gt3CsvValue, function(err) {
     if (err) {throw err};
   });
 
-  fs.writeFile(path.join(__dirname, 'data', 'final', `championship-${split}-gt4.csv`), gt4CsvValue, function(err) {
+  fs.writeFile(path.join(finalDir, `championship-${split}-gt4.csv`), gt4CsvValue, function(err) {
     if (err) {throw err};
   });
 });
