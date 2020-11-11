@@ -25,3 +25,11 @@ more setup).
 ### Notes
 
 - Data files need to be in the format `camelCaseRaceName-r.json` for race and `camelCaseRaceName-q.json` for qualification.
+
+## Docker and docker-compose
+
+1. Make sure you have the latest version of docker and docker-compose installed.  These instructions were tested on Linux.  Changed for Windows should be minimal.
+1. Ensure the data folder exists in the root of the git directory structure.  This will get mounted into the container.
+1. Run `docker-compose build`
+1. Run `docker-compose up`.  Because it does not run a daemon, you will get all log output to your terminal/console.  There is no need to run this in the background with -d.
+1. Run `docker-compose rm` to clean up exited containers (optional).
