@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  lrp:
+    build: .
+    volumes:
+      - ./data:/app/data
