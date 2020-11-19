@@ -19,7 +19,7 @@ function winsAndPodiums(nonEmptyFinishingPositions) {
   }, { wins: 0, podiums: 0 });
 }
 
-function createCsvRowForPlayerId(playerId, drivers, raceNames, polePositionPlayers, fastestLaps){
+function createCsvRowForPlayerId(playerId, drivers, raceNames, polePositionPlayers, fastestLaps, position){
   const driverResult = drivers[playerId];
 
   const racePositions = raceNames.map(function(racePos, index){
@@ -43,7 +43,7 @@ function createCsvRowForPlayerId(playerId, drivers, raceNames, polePositionPlaye
 
   // each value in this array must match the order of the columns below in `stringify` columns
   return [
-    driverResult.carNumber,
+    position,
     driverResult.name,
     totalPoints,
     0, // Diff - filled in after all records have been compiled to account for fastest lap and pole point additions
@@ -69,8 +69,8 @@ function addDiffValuesToCsvRows(csvRows) {
 function createSplitCsv(races, finishingOrderResults, drivers, polePositionPlayers, fastestLaps){
   const raceNames = races.map((race) => race.name);
 
-  const data = finishingOrderResults.map(function(playerId) {
-    return createCsvRowForPlayerId(playerId, drivers, raceNames, polePositionPlayers, fastestLaps)
+  const data = finishingOrderResults.map(function(playerId, idx) {
+    return createCsvRowForPlayerId(playerId, drivers, raceNames, polePositionPlayers, fastestLaps, idx + 1)
   });
 
   const dataWithDiff = addDiffValuesToCsvRows(data);
