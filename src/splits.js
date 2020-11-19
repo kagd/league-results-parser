@@ -6,11 +6,12 @@ function loadSplitRace(raceName, splitDir) {
   const fileName = `${camelCase(raceName)}-r.json`
   const filepath = path.join(splitDir, fileName);
   try {
-    // const contents = fs.readFileSync(filepath, {encoding: 'utf16le', flag:'r'});
-    return readJSON(filepath);
+    const contents = readJSON(filepath);
+    console.log(`FOUND ${splitDir.split('/').pop()} ${fileName}`);
+    return contents;
   } catch (error) {
     if(error.toString().indexOf('not found') > -1){
-      console.log(`${splitDir.split('/').pop()} ${fileName} not found`);
+      console.log(`MISSING ${splitDir.split('/').pop()} ${fileName}`);
     }
     else {
       throw error;

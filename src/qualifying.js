@@ -9,10 +9,11 @@ function loadSplitQualifiers(seasonConfig, splitDir){
     const filepath = path.join(splitDir, fileName);
     try {
       const contents = readJSON(filepath);
+      console.log(`FOUND ${splitDir.split('/').pop()} ${fileName}`);
       memo.push(contents);
     } catch (error) {
       if(error.toString().indexOf('not found') > -1){
-        console.log(`${splitDir.split('/').pop()} ${fileName} not found`);
+        console.log(`MISSING ${splitDir.split('/').pop()} ${fileName}`);
       }
       else {
         throw error;

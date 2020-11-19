@@ -1,1 +1,5 @@
 node_modules
+src/data/final/*
+src/data/raw/split1/*
+src/data/raw/split2/*
+!.gitkeep
