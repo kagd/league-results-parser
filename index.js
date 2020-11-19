@@ -9,8 +9,9 @@ const { fastestLaps } = require('./src/fastestLap');
 const { parseSeasonRacesIntoClasses } = require('./src/classes');
 
 ['split1', 'split2'].forEach(function(split){
-  const splitRaces = loadSplitRaces(seasonConfig, split);
-  const splitQualifiers = loadSplitQualifiers(seasonConfig, split);
+  const splitDir = path.join(__dirname, 'src', 'data', 'raw', split);
+  const splitRaces = loadSplitRaces(seasonConfig, splitDir);
+  const splitQualifiers = loadSplitQualifiers(seasonConfig, splitDir);
   
   const racesWithClasses = parseSeasonRacesIntoClasses(splitRaces);
   const gt3Drivers = consolidateRaces(seasonConfig, racesWithClasses.gt3);
@@ -29,7 +30,7 @@ const { parseSeasonRacesIntoClasses } = require('./src/classes');
   //   if (err) {throw err};
   // });
 
-  const finalDir = path.join(__dirname, 'data', 'final');
+  const finalDir = path.join(__dirname, 'src', 'data', 'final');
   if (!fs.existsSync(finalDir)){
     fs.mkdirSync(finalDir);
   }

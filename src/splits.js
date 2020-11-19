@@ -1,8 +1,8 @@
 const { camelCase } = require('lodash');
 const path = require('path');
 
-function loadSplitRace(raceName, split) {
-  const filepath = path.join(__dirname, '../', 'data', 'raw', split, `${camelCase(raceName)}-r.json`);
+function loadSplitRace(raceName, splitDir) {
+  const filepath = path.join(splitDir, `${camelCase(raceName)}-r.json`);
   try {
     return require(filepath);
   } catch (error) {
@@ -16,9 +16,9 @@ function loadSplitRace(raceName, split) {
   }
 }
 
-function loadSplitRaces(seasonConfig, split){
+function loadSplitRaces(seasonConfig, splitDir){
   return seasonConfig.races.map(function(race) {
-    return loadSplitRace(race.name, split);
+    return loadSplitRace(race.name, splitDir);
   });
 }
 
