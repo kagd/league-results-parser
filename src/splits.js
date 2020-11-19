@@ -1,12 +1,21 @@
 const { camelCase } = require('lodash');
 const path = require('path');
+const { readJSON } = require('./jsonLoader');
 
 function loadSplitRace(raceName, splitDir) {
-  const filepath = path.join(splitDir, `${camelCase(raceName)}-r.json`);
+  const fileName = `${camelCase(raceName)}-r.json`
+  const filepath = path.join(splitDir, fileName);
   try {
-    return require(filepath);
+    // const contents = fs.readFileSync(filepath, {encoding: 'utf16le', flag:'r'});
+    return readJSON(filepath);
   } catch (error) {
-    console.log(`path ${filepath} not found`);
+    if(error.toString().indexOf('not found') > -1){
+      console.log(`${splitDir.split('/').pop()} ${fileName} not found`);
+    }
+    else {
+      throw error;
+    }
+
     return {
       sessionResult: {
         leaderBoardLines: [],

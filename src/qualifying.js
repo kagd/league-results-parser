@@ -1,13 +1,23 @@
 const { camelCase } = require('lodash');
 const path = require('path');
+const fs = require('fs');
+const { readJSON } = require('./jsonLoader');
 
 function loadSplitQualifiers(seasonConfig, splitDir){
   return seasonConfig.races.reduce((memo, race) => {
-    const filepath = path.join(splitDir, `${camelCase(race.name)}-q.json`);
+    const fileName = `${camelCase(race.name)}-q.json`;
+    const filepath = path.join(splitDir, fileName);
     try {
-      memo.push(require(filepath));
+      const contents = readJSON(filepath);
+      memo.push(contents);
     } catch (error) {
-      console.log(`path ${filepath} not found`);
+      if(error.toString().indexOf('not found') > -1){
+        console.log(`${splitDir.split('/').pop()} ${fileName} not found`);
+      }
+      else {
+        throw error;
+      }
+
       memo.push({
         sessionResult: {
           leaderBoardLines: [],
