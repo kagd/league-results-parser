@@ -29,6 +29,8 @@ const carModelIdToClass = {
   21: carClass.gt3, // Honda Evo
   22: carClass.gt3, // 720s
   23: carClass.gt3, // '19 Porsche
+  24: carClass.gt3, // Ferrari 488 GT3 Evo
+  25: carClass.gt3, // '20 Mercedes-AMG GT3
   
   // GT4 cars
   50: carClass.gt4, // alpine
